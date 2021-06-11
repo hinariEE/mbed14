@@ -17,5 +17,5 @@ while(True):
     for tag in img.find_apriltags(): # defaults to TAG36H11
         img.draw_rectangle(tag.rect(), color = (255, 0, 0))
         img.draw_cross(tag.cx(), tag.cy(), color = (0, 255, 0))
-        uart.write(("Tag ID %d" % tag.id()).encode())
+        uart.write(("Tag ID %d; " % tag.id()).encode())
     uart.write(("FPS %f\r\n" % clock.fps()).encode())
